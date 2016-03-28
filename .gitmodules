@@ -2,3 +2,7 @@
 	path = lib/sfml
 	url = https://github.com/SFML/SFML
 	branch = master
+[submodule "lib/tinyxml2"]
+	path = lib/tinyxml2
+	url = https://github.com/leethomason/tinyxml2
+	branch = master

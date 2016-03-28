@@ -1,18 +1,19 @@
 #include <iostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <tinyxml2.h>
 
 int main() {
 
-	sf::Shader shader;
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile("isometric.xml");
 
-	if (!shader.loadFromFile("noise.vert", "noise.frag")) {
-		return 1;
-	}
+	const char* title = doc.FirstChildElement( "TextureAtlas" )->FirstChildElement( "SubTexture" )->Attribute("name");
+	printf( "Name of play (1): %s\n", title);
 
-	sf::RectangleShape r(sf::Vector2f(2, 1));
-
-	sf::RenderWindow window(sf::VideoMode(480, 480), "Window");
+	sf::RectangleShape r(sf::Vector2f(100, 100));
+	r.setFillColor(sf::Color::White);
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Window");
 	sf::Event event;
 
 	while (window.isOpen()) {
@@ -22,6 +23,7 @@ int main() {
 			}
 		}
 		window.clear(sf::Color::Black);
+		window.draw(r);
 		window.display();
 	}
 

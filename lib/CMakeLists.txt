@@ -1,1 +1,2 @@
 ADD_SUBDIRECTORY(sfml)
+ADD_SUBDIRECTORY(framework)

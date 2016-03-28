@@ -8,6 +8,8 @@ SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 SET(SOURCE_FILES
-        main.cpp)
+        data/Map.cpp
+        data/TiledMap.cpp
+        )
 
 ADD_LIBRARY(${PROJECT_NAME} ${SOURCE_FILES})

@@ -2,8 +2,11 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <tinyxml2.h>
+#include <framework/framework.h>
 
 int main() {
+
+	engine::Map map;
 
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile("isometric.xml");
